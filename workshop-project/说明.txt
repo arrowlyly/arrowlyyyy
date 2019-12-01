@@ -1,0 +1,3 @@
+Data in \ws2_django_demo\dashboard\test is 200m
+Data in  \ws2_django_demo\dashboard\test2 is 10m
+Lucene bag concludes all the lucene code

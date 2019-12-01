@@ -1,0 +1,413 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.png">
+
+    <title>Moogle</title>
+
+    <!-- Bootstrap core CSS -->
+   <link href="/static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/static/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="css/slimmenu.min.css" rel="stylesheet">-->
+    <link href="static/custom.css" rel="stylesheet">
+    <link href="static/plugins.css" rel="stylesheet">
+    <link href="static/style.css" rel="stylesheet">
+    <link href="static/responsive.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+    <link href="static/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="static/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-menu-title="Main Menu">
+<!-- Top Navigation -->
+<section class="top-navigation">
+    <div class="container">
+        <div class="left-navigation">
+            <ul class="slimmenu nav navbar-nav">
+                <li class="current-menu-item">
+                    <a href="index.html">Home</a>
+                 
+                </li>
+               
+               
+               
+               
+            </ul>
+        </div>
+
+
+
+        <div class="search-console">
+		       
+            <ul>
+                <li>
+                    <a href="#" data-toggle="dropdown" id="dLabel" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <!-- Dropdown -->
+                    <div class="dropdown-menu" aria-labelledby="dLabel">
+                        <form method="POST">
+                                  {{ form }}
+                                 {% csrf_token %}
+                            
+                         <button type="submit" class="search-submit"><i class="fa fa-search"></i> </button> 
+                        </form>
+                    </div>
+            
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="main">
+    
+
+    <div class="container">
+        <div class="row">
+            <!-- recent posts -->
+            <div class="col-sm-8">
+                <div class="recent-post3">
+                    <div class="img-holder">
+                         
+                            <li>search result: {{number}}</li>
+                               <li>cost: {{time}} s</li>
+                             
+						
+			     <ul>
+			     {% for item in filename %}
+                              <div class="border-img">
+                               <br>
+		               <h2>
+                               <a href="/static/test/{{item.book_name}}">{{item.book_name}} </a>
+                               </h2>
+				</div>
+                                 </br>
+				<p>{{item.line}}</p>
+				<p>First search word appear line: {{item.position}}</p>
+							
+                          {% endfor %}
+	                      </ul>
+        </div>
+  
+					
+</section>					
+					
+					
+                    <!-- <div class="recent-post-desc"> -->
+                        <!-- <div class="recent-post-meta"> -->
+                            <!-- <ul> -->
+                                <!-- <li> -->
+                                    <!-- <a href="#">lifestyle</a> -->
+                                <!-- </li> -->
+                                <!-- <li> -->
+                                    <!-- <a href="#">admin</a> -->
+                                <!-- </li> -->
+                                <!-- <li> -->
+                                    <!-- <span>05 oct, 2016</span> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+                        <!-- </div> -->
+                            <!-- <a href="#" class="btn">continue reading</a> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+                <!-- <div class="recent-post3"> -->
+                    <!-- <div class="img-holder"> -->
+                        <!-- <div class="border-img"> -->
+                            <!-- <img src="images/home-3/rp2.jpg" alt="" /> -->
+                            <!-- <span class="post-views"><i class="fa fa-eye"></i> 03 </span> -->
+                            <!-- <h2> -->
+                                <!-- <a href="#">going to the store</a> -->
+                            <!-- </h2> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="recent-post-desc"> -->
+                        <!-- <div class="recent-post-meta"> -->
+                            <!-- <ul> -->
+                                <!-- <li> -->
+                                    <!-- <a href="#">lifestyle</a> -->
+                                <!-- </li> -->
+                                <!-- <li> -->
+                                    <!-- <a href="#">admin</a> -->
+                                <!-- </li> -->
+                                <!-- <li> -->
+                                    <!-- <span>05 oct, 2016</span> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+                        <!-- </div> -->
+                        <!-- <p>donec finibus purus nec lobortis porta. pellentesque convallis ligula a velit commodo, a dignissim urna tincidunt. donec nisi quam, vestibulum id lacus a, fringilla pharetra mauris. ut urna odio, dapibus ac est a, tempor feugiat nulla. pellentesque gravida eros nec risus lacinia luctus. nullam ex mauris, sollicitudin nec vehicula at, varius ut arcu.</p> -->
+                        <!-- <a href="#" class="btn">continue reading</a> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+                <!-- <div class="recent-post3"> -->
+                    <!-- <div class="img-holder"> -->
+                        <!-- <div class="border-img"> -->
+                            <!-- <img src="images/home-3/rp3.jpg" alt="" /> -->
+                            <!-- <span class="post-views"><i class="fa fa-eye"></i> 69 </span> -->
+                            <!-- <h2> -->
+                                <!-- <a href="#">morning swimming</a> -->
+                            <!-- </h2> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="recent-post-desc"> -->
+                        <!-- <div class="recent-post-meta"> -->
+                            <!-- <ul> -->
+                                <!-- <li> -->
+                                    <!-- <a href="#">lifestyle</a> -->
+                                <!-- </li> -->
+                                <!-- <li> -->
+                                    <!-- <a href="#">admin</a> -->
+                                <!-- </li> -->
+                                <!-- <li> -->
+                                    <!-- <span>05 oct, 2016</span> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+                        <!-- </div> -->
+                        <!-- <p>donec finibus purus nec lobortis porta. pellentesque convallis ligula a velit commodo, a dignissim urna tincidunt. donec nisi quam, vestibulum id lacus a, fringilla pharetra mauris. ut urna odio, dapibus ac est a, tempor feugiat nulla. pellentesque gravida eros nec risus lacinia luctus. nullam ex mauris, sollicitudin nec vehicula at, varius ut arcu.</p> -->
+                        <!-- <a href="#" class="btn">continue reading</a> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+
+
+
+
+
+                <section>
+                <div class="blog-pagination">
+                    <ul>
+                        <li><a href="#">previous</a> </li>
+                        <li><a href="#">1</a> </li>
+                        <li><a href="#">2</a> </li>
+                        <li><a href="#">3</a> </li>
+                        <li><a href="#">4</a> </li>
+                        <li><a href="#">5</a> </li>
+                        <li><a href="#">next</a> </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-sm-4" >
+                <div class="sidebar" >
+                    search form
+                    <div class="widget">
+                        <form method="POST">
+                                    {{ form }}
+                                 {% csrf_token %}
+                            <button type="submit" class="search-submit"><i class="fa fa-search"></i> </button>
+                        </form>
+                    </div>
+                    <!-- categories -->
+                    <div class="widget widget_categories" style="float:right">
+                        <h4><span>&nbsp;</span> categories</h4>
+                        <ul>
+                            <li><a href="#">xxx</a> <span>03</span> </li>
+                            <li><a href="#">xxx</a> <span>15</span> </li>
+                            <li><a href="#">xxx</a> <span>10</span> </li>
+                            <li><a href="#">xxxx</a> <span>69</span> </li>
+                            <li><a href="#">xxx</a> <span>99</span> </li>
+                        </ul>
+                    </div>
+      </div> 
+</div>
+
+                    <!-- recent posts -->
+                    <div class="widget">
+                        <h4><span>&nbsp;</span> recent posts</h4>
+                        <ul class="recent-pwidget">
+                            <li>
+                                <div class="rp-img">
+                                    <div class="border-img">
+         
+                                    </div>
+                                </div>
+                                <div class="rp-desc">
+                                    <h5>
+                                        <a href="#">xxx</a>
+                                    </h5>
+                                    <p>donec finibus purus nec lobortis porta. pellentesque convallis ligula a velit commodo,a dignissim urna tincidunt. donec nisi quam, </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rp-img">
+                                    <div class="border-img">
+                                       
+                                    </div>
+                                </div>
+                                <div class="rp-desc">
+                                    <h5>
+                                        <a href="#">xxx</a>
+                                    </h5>
+                                    <p>donec finibus purus nec lobortis porta. pellentesque convallis ligula a velit commodo,a dignissim urna tincidunt. donec nisi quam, </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rp-img">
+                                    <div class="border-img">
+                                        
+                                    </div>
+                                </div>
+                                <div class="rp-desc">
+                                    <h5>
+                                        <a href="#">xxx</a>
+                                    </h5>
+                                    <p>donec finibus purus nec lobortis porta. pellentesque convallis ligula a velit commodo,a dignissim urna tincidunt. donec nisi quam, </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rp-img">
+                                    <div class="border-img">
+                                        
+                                    </div>
+                                </div>
+                                <div class="rp-desc">
+                                    <h5>
+                                        <a href="#">xxx</a>
+                                    </h5>
+                                    <p>donec finibus purus nec lobortis porta. pellentesque convallis ligula a velit commodo,a dignissim urna tincidunt. donec nisi quam, </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- featured posts slider -->
+                    <!-- <div class="widget"> -->
+                        <!-- <h4><span>&nbsp;</span> featured posts</h4> -->
+                        <!-- <div id="feature-slider" class="carousel feature-slider slide" data-ride="carousel"> -->
+                            <!-- wrapper for slides -->
+                            <!-- <div class="carousel-inner" role="listbox"> -->
+                                <!-- <div class="item data-image active" data-image="images/home-2/feature-slider1.jpg"> -->
+                                    <!-- <div class="middle"> -->
+                                        <!-- <div> -->
+                                            <!-- <p>lifestyle</p> -->
+                                            <!-- <h3> -->
+                                                <!-- <a href="#">summer paradise</a> -->
+                                            <!-- </h3> -->
+                                            <!-- <p class="fw-700">september 30, 2016</p> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                <!-- </div> -->
+                                <!-- <div class="item data-image" data-image="images/featured-image-2.jpg"> -->
+                                    <!-- <div class="middle"> -->
+                                        <!-- <div> -->
+                                            <!-- <p>fashion</p> -->
+                                            <!-- <h3> -->
+                                                <!-- <a href="#">my summer diary</a> -->
+                                            <!-- </h3> -->
+                                            <!-- <p class="fw-700">october 15, 2016</p> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                <!-- </div> -->
+                                <!-- <div class="item data-image" data-image="images/featured-image-3.jpg"> -->
+                                    <!-- <div class="middle"> -->
+                                        <!-- <div> -->
+                                            <!-- <p>travel</p> -->
+                                            <!-- <h3> -->
+                                                <!-- <a href="#">summer paradise</a> -->
+                                            <!-- </h3> -->
+                                            <!-- <p class="fw-700">august 14, 2016</p> -->
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
+                            <!-- indicators -->
+                            <!-- <ol class="carousel-indicators"> -->
+                                <!-- <li data-target="#feature-slider" data-slide-to="0" class="active"></li> -->
+                                <!-- <li data-target="#feature-slider" data-slide-to="1"></li> -->
+                                <!-- <li data-target="#feature-slider" data-slide-to="2"></li> -->
+                            <!-- </ol> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- tags -->
+                    <!-- <div class="widget widget_tag_cloud"> -->
+                        <!-- <h4><span>&nbsp;</span> tags</h4> -->
+                        <!-- <div class="tagcloud"> -->
+                            <!-- <a href="#">blog</a> -->
+                            <!-- <a href="#">post</a> -->
+                            <!-- <a href="#">creative</a> -->
+                            <!-- <a href="#">life</a> -->
+                            <!-- <a href="#">video</a> -->
+                            <!-- <a href="#">travels</a> -->
+                            <!-- <a href="#">style</a> -->
+                            <!-- <a href="#">ideas</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- newsletter -->
+                    <!-- <div class="widget widget_wysija"> -->
+                        <!-- <h4><span>&nbsp;</span> newsletter</h4> -->
+                        <!-- <form id="form-wysija-2" method="post" action="#wysija" class="widget_wysija"> -->
+                            <!-- <p class="wysija-paragraph"> -->
+                                <!-- <input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="email" placeholder="your email" value=""> -->
+                            <!-- </p> -->
+                            <!-- <button type="submit"><i class="fa fa-location-arrow"></i> </button> -->
+                            <!-- <input class="wysija-submit wysija-submit-field" type="submit" value="subscribe!"> -->
+                            <!-- <p>subscribe to our free weekly newsletter and never miss a thing.</p> -->
+                        <!-- </form> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+
+</section>
+<!-- instagram feed -->
+<section class="padding-top-0">
+    <div class="text-center">
+        <h3 class="insta-heading">more info <span>&nbsp;</span> to google</h3>
+    </div>
+</section>
+
+
+<!-- footer -->
+<section class="footer" data-color="#333333">
+    <div class="container">
+        <div class="text-center">
+            <!-- <a href="#"><img src="images/footer-logo.png" alt="" /> </a> -->
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vulputate nulla non eros faucibus,<br/> vitae bibendum sapien pretium. Nunc bibendum convallis faucibus.</p> -->
+            <div class="social">
+                <a href="#"><i class="fa fa-facebook-f"></i> </a>
+                <a href="#"><i class="fa fa-twitter"></i> </a>
+                <a href="#"><i class="fa fa-pinterest-p"></i> </a>
+                <a href="#"><i class="fa fa-instagram"></i> </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="static/js/ie10-viewport-bug-workaround.js"></script>
+<!-- Custom Scripts -->
+<script src="static/js/plugins.js"></script>
+<script src="static/js/jquery.slimmenu.js"></script>
+<script src="static/js/custom.js"></script>
+</body>
+</html>
